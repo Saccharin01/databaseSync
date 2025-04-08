@@ -26,9 +26,11 @@ public class ProductDAOImpl implements ProductDAO {
     }
 
     @Override
-    public Product selectProduct(Long number) throws Exception {
-        Product selected = productRepository.findById(number)
-        .orElseThrow(()-> new Exception("요청한 내용을 찾을 수 없습니다."));
+    public Product selectProduct(Long number) {
+
+        //! Deprecated Method
+        //todo findById Method 로 변경해야 하는데, findById 사용 시 예외 처리를 수행해야 함
+        Product selected = productRepository.getById(number);
         return selected;
     }
 
