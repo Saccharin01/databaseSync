@@ -6,7 +6,7 @@ public interface ProductDAO {
 
     Product insertProduct(Product product);
 
-    Product selectProduct(Long number);
+    Product selectProduct(Long number) throws Exception;
 
     Product updateProductName(Long number, String name) throws Exception;
 
